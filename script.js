@@ -73,13 +73,9 @@ strikeButton.onclick = () => {
             alert("IT IS A TIE")
         }
     }
-
-
-
-
-
-
 }
+
+resetButton.onclick = () => {window.location.reload()}
 
 
  
