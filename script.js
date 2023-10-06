@@ -6,6 +6,9 @@ const $team2Wickets = document.getElementById('wickets-team2')
 const resetButton = document.getElementById('reset')
 const strikeButton = document.getElementById('strike')
 
+const strikeAudio = new Audio("http://bit.ly/so-ball-hit");
+const gameOverAudio = new Audio("http://bit.ly/so-crowd-cheer");
+
 var team1Score = 0
 var team1Wickets = 0
 var team2Score = 0
@@ -19,6 +22,7 @@ var turn = 1
 const possibleOutcomes = [0,1,2,3,4,5,6,'W']
 
 function gameOver(){
+    gameOverAudio.play()
     if (team1Score>team2Score)
         {
             alert("INDIA WINS")
@@ -37,6 +41,7 @@ function gameOver(){
 
 strikeButton.onclick = () => {
     totalBalls++
+    strikeAudio.play()
     console.log(totalBalls)
     if(turn == 1){
         var score = possibleOutcomes[Math.floor(Math.random() * possibleOutcomes.length)]
